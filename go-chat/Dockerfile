@@ -8,11 +8,12 @@ FROM golang:alpine AS builder
 LABEL MAINTAINER="georgetheprogrammer@gmail.com"
 
 # Create WORKDIR using project's root directory
-WORKDIR /go/src/github.com/ong-gtp/go-chat
+WORKDIR /app
 # Copy the local package files to the container's workspace
 # in the above created WORKDIR
 COPY go.mod ./
 COPY . .
+
 RUN apk add --no-cache git
 RUN go mod tidy
 # Build the API service inside the container
@@ -39,5 +40,6 @@ CMD ["./gochatapp"]
 
 # Document that the service uses port 9010
 EXPOSE 9010
+
 
 
