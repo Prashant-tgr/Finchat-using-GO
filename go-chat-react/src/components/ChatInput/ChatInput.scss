@@ -1,0 +1,68 @@
+.ChatInput {
+  width: 95%;
+  display: flex; /* Use flexbox for better alignment */
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #ffffff; /* Light background for the input container */
+  border-radius: 8px; /* Rounded corners for a modern look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+  input {
+    flex: 1; /* Allow the input to take up available space */
+    padding: 12px 15px;
+    margin: 0;
+    background-color: #f9f9f9; /* Softer background for the input */
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle inset shadow */
+    transition: all 0.3s ease; /* Smooth transitions for hover and focus effects */
+
+    &:focus {
+      outline: none;
+      border-color: #3c793b; /* Highlight border on focus */
+      box-shadow: 0 0 5px rgba(60, 121, 59, 0.5); /* Glow effect on focus */
+    }
+  }
+
+  button {
+    margin-left: 10px;
+    padding: 12px 20px;
+    background-color: #3c793b; /* Primary button color */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #2a5f2e; /* Darker shade on hover */
+      transform: scale(1.05); /* Slight zoom effect */
+    }
+
+    &:active {
+      transform: scale(1); /* Reset zoom effect on click */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ChatInput {
+    flex-direction: column; /* Stack input and button on smaller screens */
+    padding: 15px;
+
+    input {
+      width: 100%; /* Full width for input */
+      margin-bottom: 10px; /* Add spacing between input and button */
+    }
+
+    button {
+      width: 100%; /* Full width for button */
+      margin-left: 0;
+    }
+  }
+}
