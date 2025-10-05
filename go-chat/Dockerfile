@@ -11,7 +11,7 @@ LABEL MAINTAINER="georgetheprogrammer@gmail.com"
 WORKDIR /go/src/github.com/ong-gtp/go-chat
 # Copy the local package files to the container's workspace
 # in the above created WORKDIR
-
+COPY go.mod ./
 COPY . .
 RUN apk add --no-cache git
 RUN go mod tidy
@@ -39,4 +39,5 @@ CMD ["./gochatapp"]
 
 # Document that the service uses port 9010
 EXPOSE 9010
+
 
